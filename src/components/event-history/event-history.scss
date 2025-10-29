@@ -1,0 +1,27 @@
+.ant-input {
+  background-color: #353d45 !important;
+  color : white !important
+}
+
+.add-event-input-visible {
+  opacity: 1 !important;
+  transition: opacity 0.4s, width 0.5s, height 0.2s !important;
+}
+
+.add-event-input-invisible {
+  height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s, width 0.5s, height 0.2s !important;
+}
+
+.add-event-button-invisible {
+  height: 0 !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s, font-size 0.3s !important;
+}
+
+.add-event-button-visible {
+  opacity: 1 !important;
+  transition: opacity 0.2s, font-size 0.3s, z-index 0.2s !important;
+}

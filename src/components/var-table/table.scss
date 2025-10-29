@@ -1,0 +1,136 @@
+.ant-cascader-picker {
+  width: 100% !important;
+  background-color: rgb(49, 49, 49) !important;
+  color: white !important;
+  border-radius: 0 !important;
+
+  .anticon-down {
+    color: white !important;
+  }
+}
+.ant-switch-checked {
+  background-color: #717171 !important;
+}
+.pretty-json-container{
+   background-color: #313131 !important;
+}
+.ant-cascader-input {
+  border: none !important;
+}
+.thread-selector-inner-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-table-tbody > tr > th {
+  color: black !important;
+  background: #1c272b !important;
+}
+
+.thread-selector-title {
+  color: white;
+  margin-bottom: 10px !important;
+}
+
+.ant-cascader-menu {
+  background-color: rgb(49, 49, 49);
+}
+
+.ant-cascader-menu-item-active {
+  background: #ff9b42 !important;
+}
+
+.ant-cascader-menu-item:hover {
+  background: #ff9b42 !important;
+}
+
+.anticon-right, .ant-cascader-menu-item {
+  color: white !important;
+}
+
+table {
+  box-shadow: 0 0 0 2px #1c272b;
+  border: none !important;
+}
+
+.ant-table-container {
+  border: none !important;
+  background: rgb(49, 49, 49);
+  color: white;
+}
+
+.ant-empty-description {
+  color: white;
+}
+
+.ant-table {
+  border: none !important;
+}
+
+.ant-table-cell {
+  border-color: #1c272b !important;
+  border-radius: 0px !important;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: rgb(49, 49, 49) !important;
+}
+
+
+.ant-table-body {
+  height: 210px;
+}
+
+::-webkit-scrollbar {
+  background: rgb(49, 49, 49);
+  width: 6px !important;
+  height: 4px !important;
+  margin-left: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff9b42;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.ant-table-placeholder {
+  border: none !important;
+
+  .ant-table-cell {
+    border: none !important;
+
+    &:hover {
+      background: rgb(49, 49, 49) !important;
+    }
+  }
+}
+
+.ant-table-cell-scrollbar {
+  margin-bottom: 20px !important;
+  border: none !important;
+}
+
+///* width */
+//::-webkit-scrollbar {
+//  width: 8px;
+//  border-radius: 2px;
+//}
+//
+///* Track */
+//::-webkit-scrollbar-track {
+//  background: #FF9B42;
+//  border-radius: 2px;
+//}
+//
+///* Handle */
+//::-webkit-scrollbar-thumb {
+//  background: white;
+//  border-radius: 2px;
+//}
+//
+///* Handle on hover */
+//::-webkit-scrollbar-thumb:hover {
+//  background: #555;
+//}

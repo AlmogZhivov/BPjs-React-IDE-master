@@ -1,0 +1,59 @@
+{
+  "name": "bpjs-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@stomp/stompjs": "^6.1.0",
+    "ace-builds": "^1.4.12",
+    "antd": "^4.13.0",
+    "axios": "^0.21.1",
+    "javascript-terminal": "^1.1.1",
+    "lodash": "^4.17.21",
+    "rc-tween-one": "^3.0.0-beta.7",
+    "re-resizable": "^6.9.0",
+    "react": "^16.9.0",
+    "react-ace": "^9.5.0",
+    "react-animated-list": "^0.1.4",
+    "react-dom": "^16.0.2",
+    "react-json-view": "^1.21.3",
+    "react-scripts": "^5.0.0",
+    "react-stomp": "^5.1.0",
+    "scroll-into-view-if-needed": "^2.2.29",
+    "styled-components": "^5.3.3",
+    "terminal-in-react": "^4.3.1",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "jest-websocket-mock": "^2.2.0",
+    "mock-socket": "^9.0.3",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.1",
+    "node-sass": "^7.0.1"
+  }
+}
