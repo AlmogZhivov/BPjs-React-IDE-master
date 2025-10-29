@@ -3,7 +3,7 @@
 # turn on bash's job control
 #set -m
 
-cd BPjs-React-IDE || exit 1
+cd BPjs-React-IDE-master || exit 1
 
 updateProjects=${UPDATE_PROJECTS:0}
 

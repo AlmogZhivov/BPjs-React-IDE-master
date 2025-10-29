@@ -3,7 +3,7 @@
 # turn on bash's job control
 #set -m
 
-cd BPjs-Debugger || exit 1
+cd Debugger || exit 1
 
 updateProjects=${UPDATE_PROJECTS:0}
 if [[ $updateProjects -eq 1 ]]
