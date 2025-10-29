@@ -9,14 +9,15 @@ RUN apt-get update && apt-get -y upgrade \
 	&& npm install --unsafe-perm -g node-sass serve
 
 RUN git config --global pull.rebase false \
-    && git clone https://github.com/bThink-BGU/BPjs-React-IDE.git \
-	&& cd BPjs-React-IDE \
+    # && git clone https://github.com/bThink-BGU/BPjs-React-IDE.git \
+	&& git clone https://github.com/AlmogZhivov/BPjs-React-IDE-master.git \
+	&& cd BPjs-React-IDE-master \
 	&& npm install --production \
 	&& npm run build \
 	&& cd .. \
 	# && git clone https://github.com/bThink-BGU/BPjs-Debugger.git \
 	&& git clone https://github.com/AlmogZhivov/Debugger.git \
-	&& cd BPjs-Debugger \
+	&& cd Debugger \
 	&& mvn install -DskipTests 
 
 EXPOSE 80
