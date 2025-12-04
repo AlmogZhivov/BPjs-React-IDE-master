@@ -100,6 +100,17 @@ export const backToSnapShot = (time) => {
         })
 };
 
+export const previewSnapShot = (time) => {
+    axios.put(`${baseUrl}/bpjs/previewSnapshot`,
+        {
+            "snapShotTime": time
+        })
+};
+
+export const restoreSnapShot = () => {
+    axios.get(`${baseUrl}/bpjs/restoreSnapshot`)
+};
+
 
 export const removeExternalEvent = (name) => {
     axios.post(`${baseUrl}/bpjs/externalEvent`,

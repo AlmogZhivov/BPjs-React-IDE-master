@@ -60,45 +60,57 @@ const StyledMaximizeIcon = styled(PlusOutlined)`
   }
 `;
 
-const Trace = ({shouldFadePanel}) => {
-        const {progState} = useContext(ProgramStateCTX);
-        const [componentsHeight, setComponentsHeight] = useState(200);
-        const hasContent = progState.eventsHistory?.length > 0
-        return (
-            <TraceContainer shouldFadePanel={shouldFadePanel} componentsHeight={componentsHeight}>
-                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                    <CustomTitle level={5} color={hasContent && componentsHeight < 200 ? "#ff6961" : "white"}>
-                        Trace
-                    </CustomTitle>
-                    {componentsHeight === 200
-                        ? <StyledMinimizeIcon onClick={() => setComponentsHeight(40)}/>
-                        : <StyledMaximizeIcon onClick={() => setComponentsHeight(200)}/>}
-                </div>
-                <div style={{height: "75%", overflowY: "auto"}}>
-                    {progState.currentEvent ?
-                        (<EventRow alertDot name={progState.currentEvent}/>) :
-                        null
-                    }
-                    {(!progState.eventsHistory || (progState.eventsHistory && progState.eventsHistory.length === 0)) && !progState.currentEvent ?
-                        <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}/> :
-                        <AnimatedList animation={"grow"}>
-                            {progState.eventsHistory.map((eh, i) => (
-                                <EventRow
-                                    key={i}
-                                    name={eh.name}
-                                    clickAble
-                                    withX
-                                    withConfirmation
-                                    afterConfirmMsg={`Back To The Time Where \n  Event: \"${eh.name}\" \n Came Out To The World!`}
-                                    confirmMsg={`Are you sure you want to cancel the event \"${eh.name}\" selection?`}
-                                    onClick={() => API.backToSnapShot(eh.timeStamp)}
-                                />
-                            ))}
-                        </AnimatedList>}
-                </div>
-            </TraceContainer>
-        );
-    }
-;
+const Trace = ({ shouldFadePanel }) => {
+  const { progState } = useContext(ProgramStateCTX);
+  const [componentsHeight, setComponentsHeight] = useState(200);
+  const hasContent = progState.eventsHistory?.length > 0
+  return (
+    <TraceContainer shouldFadePanel={shouldFadePanel} componentsHeight={componentsHeight}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <CustomTitle level={5} color={hasContent && componentsHeight < 200 ? "#ff6961" : "white"}>
+          Trace
+        </CustomTitle>
+        {componentsHeight === 200
+          ? <StyledMinimizeIcon onClick={() => setComponentsHeight(40)} />
+          : <StyledMaximizeIcon onClick={() => setComponentsHeight(200)} />}
+      </div>
+      <div style={{ height: "75%", overflowY: "auto" }}>
+        {progState.currentEvent ?
+          (<EventRow alertDot name={progState.currentEvent} />) :
+          null
+        }
+        {(!progState.eventsHistory || (progState.eventsHistory && progState.eventsHistory.length === 0)) && !progState.currentEvent ?
+          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} /> :
+          <AnimatedList animation={"grow"}>
+            {progState.eventsHistory.map((eh, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                <EventRow
+                  name={eh.name}
+                  clickAble
+                  withX
+                  withConfirmation
+                  afterConfirmMsg={`Back To The Time Where \n  Event: \"${eh.name}\" \n Came Out To The World!`}
+                  confirmMsg={`Are you sure you want to cancel the event \"${eh.name}\" selection?`}
+                  onClick={() => API.backToSnapShot(eh.timeStamp)}
+                />
+                <button
+                  style={{ marginLeft: '5px', fontSize: '10px', padding: '2px 5px', cursor: 'pointer' }}
+                  onClick={() => API.previewSnapShot(eh.timeStamp)}
+                >
+                  Preview
+                </button>
+              </div>
+            ))}
+          </AnimatedList>}
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '5px' }}>
+        <button onClick={() => API.restoreSnapShot()} style={{ cursor: 'pointer', color: 'white', background: 'transparent', border: '1px solid white', borderRadius: '3px' }}>
+          Return to Live
+        </button>
+      </div>
+    </TraceContainer>
+  );
+}
+  ;
 
 export default Trace;
