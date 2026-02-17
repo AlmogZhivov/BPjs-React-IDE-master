@@ -4,7 +4,7 @@ axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
 axios.defaults.headers.common['Access-Control-Allow-Credentials'] = true
 export const setUserId = (uid) => axios.defaults.headers.common['userId'] = uid;
 
-export const baseUrl = `http://${process.env.REACT_APP_API_URL || window.location.hostname+":8080"}`;
+export const baseUrl = `http://${process.env.REACT_APP_API_URL || window.location.hostname + ":8080"}`;
 
 export const sendDebugReq = (ideParams) => {
     axios.post(`${baseUrl}/bpjs/debug`,
@@ -53,6 +53,13 @@ export const nextSync = () => {
     axios.get(`${baseUrl}/bpjs/nextSync`)
 };
 
+export const selectEvent = (eventName) => {
+    axios.post(`${baseUrl}/bpjs/selectEvent`,
+        {
+            "eventName": eventName
+        })
+};
+
 export const muteBreakpoints = (mute) => {
     axios.put(`${baseUrl}/bpjs/breakpoint`, { skipBreakpoints: mute })
 };
@@ -66,7 +73,7 @@ export const sendContinueReq = () => {
 };
 
 export const skipExternalEvents = (skip) => {
-    axios.put(`${baseUrl}/bpjs/waitExternal`, {waitForExternal: skip})
+    axios.put(`${baseUrl}/bpjs/waitExternal`, { waitForExternal: skip })
 };
 
 export const addExternalEvent = (name) => {
